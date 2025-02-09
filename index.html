@@ -7,22 +7,29 @@
   
   <!-- Three.js library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/script.js"></script>
+  
   <!-- Tailwind CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
-  <!-- Custom CSS -->
+  
+  <!-- GSAP Animation Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+  <!-- Custom JS -->
+  <script src="assets/js/scripts.js"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans relative overflow-hidden">
+<body class="bg-gray-900 text-gray-100 font-sans relative overflow-auto">
   <!-- Three.js Background Canvas (for 3D animations) -->
-  <canvas id="bg-canvas" class="absolute top-0 left-0 w-full h-full" style="z-index: -1;"></canvas>
+  <canvas id="bg-canvas" class="absolute top-0 left-0 w-full h-full" style="z-index: -1; pointer-events: none;"></canvas>
   
   <!-- Hero Section -->
-  <header class="h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-br from-blue-900 to-gray-900 relative">
+  <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-br from-blue-900 to-gray-900 relative">
     <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">NUMAAN FAROOQ</h1>
     <p class="text-xl md:text-2xl mb-6 animate-fadeInUp">Data Scientist | Machine Learning Engineer</p>
     <div class="flex gap-4 mb-8 animate-fadeIn">
@@ -40,9 +47,9 @@
   <section class="py-20 px-6 max-w-4xl mx-auto animate-fadeIn">
     <h2 class="text-4xl font-bold mb-8">Summary</h2>
     <p class="text-lg leading-relaxed">
-      Highly skilled Data Scientist with a focus on bioinformatics, machine learning, and predictive modeling.
-      Expert in deep learning, computer vision, and natural language processing (NLP) for solving complex problems.
-      Proven ability to deliver high-accuracy models and optimize performance through analytical rigor and innovation.
+      I am a highly skilled Data Scientist with a strong background in bioinformatics, machine learning, and predictive modeling.
+      I excel in deep learning, computer vision, and natural language processing (NLP) to solve complex real-world problems.
+      Passionate about innovation and dedicated to delivering high-accuracy models with robust performance.
     </p>
   </section>
 
@@ -57,8 +64,8 @@
           <p class="text-gray-400 mb-4">Unified Mentor | January 2025 – February 2025</p>
           <ul class="list-disc list-inside space-y-2">
             <li>Designed and implemented scalable machine learning pipelines for predictive analytics tasks.</li>
-            <li>Optimized machine learning models to enhance prediction accuracy by 15%.</li>
-            <li>Conducted data cleaning and preprocessing for large datasets to ensure quality input for training models.</li>
+            <li>Optimized models to enhance prediction accuracy by 15%.</li>
+            <li>Conducted data cleaning and preprocessing for large datasets.</li>
             <li>Leveraged TensorFlow, Scikit-learn, SQL, and Python for model development and deployment.</li>
           </ul>
         </div>
@@ -68,7 +75,7 @@
           <h3 class="text-2xl font-bold">Bioinformatics Intern</h3>
           <p class="text-gray-400 mb-4">Dept. of Fisheries, SKAUST | February 2025 – March 2025</p>
           <ul class="list-disc list-inside space-y-2">
-            <li>Conducted karyotyping and DNA extraction for aquatic species, achieving 95% sample purity.</li>
+            <li>Conducted karyotyping and DNA extraction for aquatic species (95% sample purity).</li>
             <li>Developed Python scripts for sequence alignment and phylogenetic tree visualization.</li>
             <li>Created interactive dashboards for genomic data analysis using Plotly and Matplotlib.</li>
             <li>Collaborated on research papers analyzing genetic diversity in fish populations.</li>
@@ -80,9 +87,9 @@
           <h3 class="text-2xl font-bold">Managed Network Expert (Data Analysis)</h3>
           <p class="text-gray-400 mb-4">Chegg | December 2024 – Present</p>
           <ul class="list-disc list-inside space-y-2">
-            <li>Providing expert solutions for statistical and data analysis queries, maintaining a 95% accuracy rate.</li>
-            <li>Analyzed complex datasets and created visual representations to assist students with advanced data concepts.</li>
-            <li>Collaborated with the global network to implement best practices in data analysis solutions.</li>
+            <li>Provided expert solutions for statistical and data analysis queries (95% accuracy rate).</li>
+            <li>Analyzed complex datasets and created visual representations for advanced data concepts.</li>
+            <li>Collaborated globally to implement best practices in data analysis solutions.</li>
           </ul>
         </div>
 
@@ -92,10 +99,10 @@
           <p class="text-gray-400 mb-4">Cognifyz Technologies | November 2024 – December 2024</p>
           <ul class="list-disc list-inside space-y-2">
             <li>Collaborated on predictive modeling projects to optimize business performance metrics.</li>
-            <li>Conducted data cleaning and preprocessing for large datasets to ensure quality input for training models.</li>
+            <li>Conducted data cleaning and preprocessing for large datasets.</li>
             <li>Applied machine learning techniques to generate actionable insights from unstructured data.</li>
             <li>Enhanced model accuracy by 12% through feature engineering and hyperparameter tuning.</li>
-            <li>Utilized SQL, Numpy, Pandas, and Python in data processing and model development.</li>
+            <li>Utilized SQL, Numpy, Pandas, and Python for efficient data processing and development.</li>
           </ul>
         </div>
 
@@ -105,7 +112,7 @@
           <p class="text-gray-400 mb-4">Cognifyz Technologies | September 2024 – October 2024</p>
           <ul class="list-disc list-inside space-y-2">
             <li>Collaborated on predictive modeling projects to optimize business performance metrics.</li>
-            <li>Conducted data cleaning and preprocessing for large datasets to ensure quality input for training models.</li>
+            <li>Conducted data cleaning and preprocessing for large datasets.</li>
             <li>Applied machine learning techniques to generate actionable insights from unstructured data.</li>
             <li>Enhanced model accuracy by 12% through feature engineering and hyperparameter tuning.</li>
           </ul>
@@ -136,7 +143,7 @@
           <img src="https://via.placeholder.com/400x200?text=Retinal+Vessel+Segmentation" alt="Retinal Vessel Segmentation" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Retinal Vessel Segmentation</h3>
           <p class="text-gray-400 mb-4">
-            Segmenting retinal blood vessels using an optimized U-Net model to achieve 94% accuracy.
+            An optimized U-Net model for segmenting retinal blood vessels with 94% accuracy.
           </p>
           <a href="https://github.com/numaanfarooq/retinal-vessel-segmentation" target="_blank" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
             <i class="fab fa-github mr-2"></i>View Code
@@ -155,7 +162,7 @@
           </a>
         </div>
 
-        <!-- Fake News Classification and Prediction using NLP -->
+        <!-- Fake News Classification using NLP -->
         <div class="project-card p-6 bg-gray-800 rounded-lg transform hover:scale-105 transition duration-300">
           <img src="https://via.placeholder.com/400x200?text=Fake+News+Classification" alt="Fake News Classification using NLP" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Fake News Classification &amp; Prediction using NLP</h3>
@@ -172,7 +179,7 @@
           <img src="https://via.placeholder.com/400x200?text=Cervical+Cancer+Prediction" alt="Cervical Cancer Prediction" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Cervical Cancer Prediction</h3>
           <p class="text-gray-400 mb-4">
-            Utilizing machine learning techniques to predict cervical cancer risk from clinical data.
+            A machine learning solution for predicting cervical cancer risk based on clinical data.
           </p>
           <a href="https://github.com/numaanfarooq/cervical-cancer-prediction" target="_blank" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
             <i class="fab fa-github mr-2"></i>View Code
@@ -195,7 +202,7 @@
           <h3 class="text-xl font-bold mb-2"><i class="fas fa-brain mr-2"></i>ML Frameworks</h3>
           <p>TensorFlow, PyTorch, Keras</p>
         </div>
-        <!-- Add other skills as needed -->
+        <!-- Additional skills can be added here -->
       </div>
     </div>
   </section>
@@ -226,12 +233,10 @@
           </p>
         </div>
         <form class="space-y-4">
-          <input type="text" placeholder="Name" class="w-full p-3 bg-gray-700 rounded">
-          <input type="email" placeholder="Email" class="w-full p-3 bg-gray-700 rounded">
-          <textarea placeholder="Message" class="w-full p-3 bg-gray-700 rounded"></textarea>
-          <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded w-full">
-            Send Message
-          </button>
+          <input type="text" placeholder="Name" class="w-full p-3 bg-gray-700 rounded" required>
+          <input type="email" placeholder="Email" class="w-full p-3 bg-gray-700 rounded" required>
+          <textarea placeholder="Message" class="w-full p-3 bg-gray-700 rounded" rows="5" required></textarea>
+          <button type="submit" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded w-full">Send Message</button>
         </form>
       </div>
     </div>
