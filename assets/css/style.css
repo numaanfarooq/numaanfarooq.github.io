@@ -1,76 +1,52 @@
-/* Global resets & smooth scrolling */
-html, body {
-  margin: 0;
-  padding: 0;
+/* Custom Styles */
+body {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Ensure our three.js background canvas stays behind all content */
-#threejs-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* so clicks pass through */
-  z-index: -1;
+/* Hero Section */
+header {
+  background: linear-gradient(135deg, #0A192F, #1E3A8A);
 }
 
-/* Section entry animations (on scroll, on loading) */
-section {
+/* Experience and Project Cards */
+.experience-card, .project-card, .skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card:hover, .project-card:hover, .skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button, a[href^="#"] {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, a[href^="#"]:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Scroll Animations */
+[data-scroll] {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 1s ease, transform 1s ease;
 }
-section.in-view {
+
+[data-scroll].is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Add an extra “pop” when the section is first loaded */
-@keyframes fadeIn3d {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) rotateX(15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotateX(0);
-  }
-}
-.section-loaded {
-  animation: fadeIn3d 0.8s ease-out forwards;
-}
-
-/* 3D hover & tap effects for cards */
-.project-card,
-.experience-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-}
-.project-card:hover,
-.experience-card:hover {
-  transform: perspective(1000px) rotateY(10deg) scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-.active-3d {
-  transform: scale(0.98);
-}
-
-/* Example effect for any logo or image with a “3D” feel */
-.animated-logo {
-  transition: transform 0.5s ease;
-}
-.animated-logo:hover {
-  transform: perspective(1000px) rotateY(360deg);
-}
-
-/* Mobile first adjustments – if needed disable hover transforms on touch devices */
-@media (max-width: 768px) {
-  .project-card,
-  .experience-card {
-    /* Optional: remove hover tilt on mobile if desired */
-    transform: none;
-  }
 }
