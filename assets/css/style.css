@@ -1,52 +1,43 @@
-/* Custom Styles */
-body {
-  scroll-behavior: smooth;
-  font-family: 'Inter', sans-serif;
+// Import Three.js
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js';
+
+function init3D() {
+    // Scene Setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.querySelector('.canvas-container').appendChild(renderer.domElement);
+
+    // DNA Strand (Helix)
+    const dnaGroup = new THREE.Group();
+    for (let i = 0; i < 20; i++) {
+        const geometry = new THREE.SphereGeometry(0.2, 16, 16);
+        const material = new THREE.MeshStandardMaterial({ color: 0x00d9ff });
+        const sphere = new THREE.Mesh(geometry, material);
+        
+        const angle = i * 0.4;
+        sphere.position.set(Math.sin(angle) * 2, i * 0.5 - 5, Math.cos(angle) * 2);
+        dnaGroup.add(sphere);
+    }
+    scene.add(dnaGroup);
+
+    // Lighting
+    const light = new THREE.PointLight(0xffffff, 1.5, 100);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+
+    camera.position.z = 10;
+
+    // Animation
+    function animate() {
+        requestAnimationFrame(animate);
+        dnaGroup.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
 }
 
-/* Hero Section */
-header {
-  background: linear-gradient(135deg, #0A192F, #1E3A8A);
-}
-
-/* Experience and Project Cards */
-.experience-card, .project-card, .skill-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.experience-card:hover, .project-card:hover, .skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Buttons */
-button, a[href^="#"] {
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover, a[href^="#"]:hover {
-  transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-out;
-}
-
-/* Scroll Animations */
-[data-scroll] {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-[data-scroll].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+// Run when DOM loads
+document.addEventListener('DOMContentLoaded', init3D);
