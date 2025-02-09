@@ -64,41 +64,112 @@ function initThreeJS() {
   animateThreeJS();
 }
 
+// Update createDNAHelix function
 function createDNAHelix() {
-  // Build a DNA helix with spheres
-  const numSpheres = 50;
-  const helixRadius = 5;
-  const helixHeight = 30;
-  const sphereGeometry = new THREE.SphereGeometry(0.4, 16, 16);
-  const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0x00BFFF });
-  
-  for (let i = 0; i < numSpheres; i++) {
-    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-    const angle = i * 0.3;
-    const x = helixRadius * Math.sin(angle);
-    const y = (i / numSpheres) * helixHeight - helixHeight / 2;
-    const z = helixRadius * Math.cos(angle);
-    sphere.position.set(x, y, z);
-    dnaGroup.add(sphere);
+  const numSegments = 100;
+  const radius = 5;
+  const height = 40;
+  const geometry = new THREE.SphereGeometry(0.3, 16, 16);
+  const material = new THREE.MeshStandardMaterial({ 
+    color: 0x00BFFF,
+    emissive: 0x0066FF,
+    metalness: 0.7,
+    roughness: 0.2
+  });
+
+  // Create double helix structure
+  for (let i = 0; i < numSegments; i++) {
+    const angle = (i / numSegments) * Math.PI * 8;
+    const y = (i / numSegments) * height - height/2;
+    
+    // First strand
+    const sphere1 = new THREE.Mesh(geometry, material);
+    sphere1.position.set(
+      radius * Math.sin(angle),
+      y,
+      radius * Math.cos(angle)
+    );
+    dnaGroup.add(sphere1);
+
+    // Second strand
+    const sphere2 = new THREE.Mesh(geometry, material);
+    sphere2.position.set(
+      radius * Math.sin(angle + Math.PI),
+      y,
+      radius * Math.cos(angle + Math.PI)
+    );
+    dnaGroup.add(sphere2);
+
+    // Connecting lines
+    if (i % 5 === 0) {
+      const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+        sphere1.position,
+        sphere2.position
+      ]);
+      const line = new THREE.Line(
+        lineGeometry,
+        new THREE.LineBasicMaterial({ color: 0xFFFFFF })
+      );
+      dnaGroup.add(line);
+    }
   }
-  // Offset the DNA group to the left
-  dnaGroup.position.x = -15;
+
+  // Add rotating base platform
+  const baseGeometry = new THREE.CylinderGeometry(8, 8, 0.5, 32);
+  const baseMaterial = new THREE.MeshStandardMaterial({
+    color: 0x1a1a1a,
+    metalness: 0.8,
+    roughness: 0.3
+  });
+  const base = new THREE.Mesh(baseGeometry, baseMaterial);
+  base.position.y = -height/2 - 2;
+  dnaGroup.add(base);
 }
 
-function createMLObjects() {
-  // Create rotating cubes to represent ML icons
-  const cubeGeometry = new THREE.BoxGeometry(2, 2, 2);
-  const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xFF4500, flatShading: true });
+// Add ML neural network visualization
+function createMLNetwork() {
+  const nodes = [];
+  const layers = [4, 6, 4]; // Number of nodes per layer
   
-  for (let i = 0; i < 10; i++) {
-    const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-    cube.position.x = Math.random() * 10 - 5;
-    cube.position.y = Math.random() * 20 - 10;
-    cube.position.z = Math.random() * 10 - 5;
-    mlGroup.add(cube);
-  }
-  // Position ML group to the right of center
-  mlGroup.position.x = 10;
+  layers.forEach((nodeCount, layerIndex) => {
+    for (let i = 0; i < nodeCount; i++) {
+      const node = new THREE.Mesh(
+        new THREE.SphereGeometry(0.5),
+        new THREE.MeshStandardMaterial({
+          color: 0xFF4500,
+          emissive: 0xFF3300,
+          metalness: 0.5
+        })
+      );
+      node.position.x = layerIndex * 5 - 5;
+      node.position.y = (i - nodeCount/2) * 2;
+      mlGroup.add(node);
+      nodes.push(node);
+      
+      // Create connections to previous layer
+      if (layerIndex > 0) {
+        const prevLayerNodes = nodes.filter(n => 
+          n.position.x === (layerIndex-1)*5 -5
+        );
+        
+        prevLayerNodes.forEach(prevNode => {
+          const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+            prevNode.position,
+            node.position
+          ]);
+          const line = new THREE.Line(
+            lineGeometry,
+            new THREE.LineBasicMaterial({
+              color: 0xFF4500,
+              opacity: 0.3,
+              transparent: true
+            })
+          );
+          mlGroup.add(line);
+        });
+      }
+    }
+  });
 }
 
 function createNLPObjects() {
