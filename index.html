@@ -4,31 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NUMAAN FAROOQ - Data Scientist</title>
-  <link rel="stylesheet" href="styles/tailwind.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/animations.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
   <!-- Hero Section -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center relative overflow-hidden">
-    <canvas id="dna-animation" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
-    <div class="z-10 text-center">
-      <h1 class="text-6xl font-bold mb-4">NUMAAN FAROOQ</h1>
-      <p class="text-2xl">Data Scientist | Machine Learning Engineer</p>
-      <button class="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg">View My Work</button>
-    </div>
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-900 to-gray-900">
+    <h1 class="text-6xl font-bold mb-4">NUMAAN FAROOQ</h1>
+    <p class="text-2xl mb-8">Data Scientist | Machine Learning Engineer</p>
+    <a href="#about" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg">Learn More</a>
   </section>
 
   <!-- About Me Section -->
   <section id="about" class="py-20 px-10">
-    <h2 class="text-4xl font-bold mb-10">About Me</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
-        <p class="text-lg">Highly skilled Data Scientist with a focus on bioinformatics, machine learning, and predictive modeling. Expert in deep learning, computer vision, and natural language processing (NLP) for solving complex problems.</p>
-      </div>
+    <h2 class="text-4xl font-bold mb-10 text-center">About Me</h2>
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg mb-6">
+        Highly skilled Data Scientist with a focus on bioinformatics, machine learning, and predictive modeling. Expert in deep learning, computer vision, and natural language processing (NLP) for solving complex problems. Experienced in applying advanced techniques for medical image segmentation, predictive modeling, and data-driven insights. Proven ability to deliver high-accuracy models and optimize performance through analytical rigor and innovation. Strong collaborator with a passion for using data to drive impactful solutions.
+      </p>
       <div class="flex justify-center">
         <img src="assets/images/profile.jpg" alt="Profile Photo" class="rounded-full w-48 h-48 object-cover border-4 border-blue-600">
       </div>
@@ -37,28 +30,88 @@
 
   <!-- Skills Section -->
   <section id="skills" class="py-20 px-10 bg-gray-800">
-    <h2 class="text-4xl font-bold mb-10">Skills</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div class="skill-card">
-        <h3 class="text-xl font-bold">Python</h3>
-        <div class="w-full bg-gray-700 rounded-full h-2.5">
-          <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%;"></div>
-        </div>
+    <h2 class="text-4xl font-bold mb-10 text-center">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Programming -->
+      <div class="skill-card p-6 bg-gray-700 rounded-lg">
+        <h3 class="text-xl font-bold mb-4">Programming</h3>
+        <ul class="list-disc list-inside">
+          <li>Python</li>
+          <li>R</li>
+          <li>SQL</li>
+        </ul>
       </div>
-      <!-- Add more skills here -->
+      <!-- Machine Learning Frameworks -->
+      <div class="skill-card p-6 bg-gray-700 rounded-lg">
+        <h3 class="text-xl font-bold mb-4">Machine Learning Frameworks</h3>
+        <ul class="list-disc list-inside">
+          <li>TensorFlow</li>
+          <li>Keras</li>
+          <li>PyTorch</li>
+        </ul>
+      </div>
+      <!-- Data Analysis -->
+      <div class="skill-card p-6 bg-gray-700 rounded-lg">
+        <h3 class="text-xl font-bold mb-4">Data Analysis</h3>
+        <ul class="list-disc list-inside">
+          <li>Pandas</li>
+          <li>NumPy</li>
+          <li>Scikit-learn</li>
+        </ul>
+      </div>
+      <!-- Visualization -->
+      <div class="skill-card p-6 bg-gray-700 rounded-lg">
+        <h3 class="text-xl font-bold mb-4">Visualization</h3>
+        <ul class="list-disc list-inside">
+          <li>Tableau</li>
+          <li>Matplotlib</li>
+          <li>Seaborn</li>
+        </ul>
+      </div>
+      <!-- NLP & CV -->
+      <div class="skill-card p-6 bg-gray-700 rounded-lg">
+        <h3 class="text-xl font-bold mb-4">NLP & CV</h3>
+        <ul class="list-disc list-inside">
+          <li>OpenCV</li>
+          <li>NLTK</li>
+        </ul>
+      </div>
+      <!-- Tools -->
+      <div class="skill-card p-6 bg-gray-700 rounded-lg">
+        <h3 class="text-xl font-bold mb-4">Tools</h3>
+        <ul class="list-disc list-inside">
+          <li>Git</li>
+          <li>Jupyter</li>
+          <li>Hadoop</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience" class="py-20 px-10">
-    <h2 class="text-4xl font-bold mb-10">Experience</h2>
-    <div class="space-y-8">
-      <div class="experience-card">
+    <h2 class="text-4xl font-bold mb-10 text-center">Experience</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+      <!-- Machine Learning Intern - Unified Mentor -->
+      <div class="experience-card p-6 bg-gray-800 rounded-lg">
         <h3 class="text-2xl font-bold">Machine Learning Intern</h3>
-        <p class="text-gray-400">Unified Mentor | Jan 2025 – Feb 2025</p>
+        <p class="text-gray-400">Unified Mentor | January 2025 – February 2025</p>
         <ul class="list-disc list-inside mt-4">
-          <li>Designed and implemented scalable machine learning pipelines.</li>
+          <li>Designed and implemented scalable machine learning pipelines for predictive analytics tasks.</li>
           <li>Optimized machine learning models to enhance prediction accuracy by 15%.</li>
+          <li>Conducted data cleaning and preprocessing for large datasets, ensuring quality input for training models.</li>
+          <li>Leveraged TensorFlow, Scikit-learn, SQL, and Python for model development and deployment.</li>
+        </ul>
+      </div>
+      <!-- Bioinformatics Intern - SKAUST -->
+      <div class="experience-card p-6 bg-gray-800 rounded-lg">
+        <h3 class="text-2xl font-bold">Bioinformatics Intern</h3>
+        <p class="text-gray-400">Dept. of Fisheries, SKAUST | February 2025 - March 2025</p>
+        <ul class="list-disc list-inside mt-4">
+          <li>Conducted karyotyping and DNA extraction for aquatic species, achieving 95% sample purity.</li>
+          <li>Developed Python scripts for sequence alignment and phylogenetic tree visualization.</li>
+          <li>Created interactive dashboards for genomic data analysis using Plotly and Matplotlib.</li>
+          <li>Collaborated on research papers analyzing genetic diversity in fish populations.</li>
         </ul>
       </div>
       <!-- Add more experiences here -->
@@ -67,29 +120,35 @@
 
   <!-- Projects Section -->
   <section id="projects" class="py-20 px-10 bg-gray-800">
-    <h2 class="text-4xl font-bold mb-10">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="project-card">
+    <h2 class="text-4xl font-bold mb-10 text-center">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Brain Tumor Segmentation -->
+      <div class="project-card p-6 bg-gray-700 rounded-lg">
         <h3 class="text-2xl font-bold">Brain Tumor Segmentation</h3>
-        <p class="text-gray-400">Developed a U-Net-based segmentation model with 93% accuracy.</p>
+        <p class="text-gray-400 mt-2">Developed a U-Net-based segmentation model with 93% accuracy.</p>
+        <a href="#" class="mt-4 inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg">View Project</a>
+      </div>
+      <!-- Retinal Vessel Segmentation -->
+      <div class="project-card p-6 bg-gray-700 rounded-lg">
+        <h3 class="text-2xl font-bold">Retinal Vessel Segmentation</h3>
+        <p class="text-gray-400 mt-2">Designed a U-Net architecture to segment retinal vessels from fundus images.</p>
         <a href="#" class="mt-4 inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg">View Project</a>
       </div>
       <!-- Add more projects here -->
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Me Section -->
   <section id="contact" class="py-20 px-10">
-    <h2 class="text-4xl font-bold mb-10">Contact Me</h2>
-    <form class="max-w-lg mx-auto">
-      <input type="text" placeholder="Name" class="w-full p-3 mb-4 bg-gray-800 rounded-lg">
-      <input type="email" placeholder="Email" class="w-full p-3 mb-4 bg-gray-800 rounded-lg">
-      <textarea placeholder="Message" class="w-full p-3 mb-4 bg-gray-800 rounded-lg"></textarea>
-      <button type="submit" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg">Send Message</button>
-    </form>
+    <h2 class="text-4xl font-bold mb-10 text-center">Contact Me</h2>
+    <div class="max-w-lg mx-auto">
+      <form>
+        <input type="text" placeholder="Name" class="w-full p-3 mb-4 bg-gray-800 rounded-lg">
+        <input type="email" placeholder="Email" class="w-full p-3 mb-4 bg-gray-800 rounded-lg">
+        <textarea placeholder="Message" class="w-full p-3 mb-4 bg-gray-800 rounded-lg"></textarea>
+        <button type="submit" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg">Send Message</button>
+      </form>
+    </div>
   </section>
-
-  <!-- Scripts -->
-  <script src="scripts/main.js"></script>
 </body>
 </html>
