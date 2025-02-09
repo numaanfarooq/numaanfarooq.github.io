@@ -25,7 +25,7 @@ gsap.utils.toArray('[data-scroll]').forEach(section => {
   });
 });
 
-// Three.js 3D Background Animation
+// Three.js 3D DNA Animation
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -54,3 +54,12 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+// Typing Effect for Hero Text
+const heroText = document.querySelector('.typing-effect');
+if (heroText) {
+  heroText.style.width = '0';
+  setTimeout(() => {
+    heroText.style.width = '100%';
+  }, 100);
+}
