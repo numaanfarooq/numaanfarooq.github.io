@@ -1,43 +1,121 @@
-// Import Three.js
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js';
-
-function init3D() {
-    // Scene Setup
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.querySelector('.canvas-container').appendChild(renderer.domElement);
-
-    // DNA Strand (Helix)
-    const dnaGroup = new THREE.Group();
-    for (let i = 0; i < 20; i++) {
-        const geometry = new THREE.SphereGeometry(0.2, 16, 16);
-        const material = new THREE.MeshStandardMaterial({ color: 0x00d9ff });
-        const sphere = new THREE.Mesh(geometry, material);
-        
-        const angle = i * 0.4;
-        sphere.position.set(Math.sin(angle) * 2, i * 0.5 - 5, Math.cos(angle) * 2);
-        dnaGroup.add(sphere);
-    }
-    scene.add(dnaGroup);
-
-    // Lighting
-    const light = new THREE.PointLight(0xffffff, 1.5, 100);
-    light.position.set(5, 5, 5);
-    scene.add(light);
-
-    camera.position.z = 10;
-
-    // Animation
-    function animate() {
-        requestAnimationFrame(animate);
-        dnaGroup.rotation.y += 0.01;
-        renderer.render(scene, camera);
-    }
-    animate();
+/* Custom Styles */
+body {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background-color: #0A192F;
+  color: #CCD6F6;
 }
 
-// Run when DOM loads
-document.addEventListener('DOMContentLoaded', init3D);
+/* Hero Section */
+header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0A192F, #1E3A8A);
+}
+
+/* 3D Animation Container */
+#dna-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Typing Effect for Hero Text */
+.typing-effect {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid #00BFFF;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #00BFFF; }
+}
+
+/* Experience and Project Cards */
+.experience-card, .project-card, .skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+
+.experience-card:hover, .project-card:hover, .skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button, a[href^="#"] {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, a[href^="#"]:hover {
+  transform: scale(1.05);
+}
+
+/* Scroll Animations */
+[data-scroll] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+[data-scroll].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Styling */
+section {
+  padding: 80px 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Contact Form */
+input, textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  color: #CCD6F6;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #8892B0;
+}
+
+button[type="submit"] {
+  background: #00BFFF;
+  color: #0A192F;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #009ACD;
+}
