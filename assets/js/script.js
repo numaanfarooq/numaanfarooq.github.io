@@ -213,26 +213,72 @@ function animateThreeJS() {
 // ---------------------------
 // GSAP SCROLL TRIGGER ANIMATIONS
 // ---------------------------
+// Update GSAP animations
 function initGSAPAnimations() {
   gsap.registerPlugin(ScrollTrigger);
-  
-  // Animate each section on scroll
-  document.querySelectorAll('section').forEach(section => {
+
+  // Section entry animations
+  gsap.utils.toArray('section').forEach(section => {
     gsap.from(section, {
       scrollTrigger: {
         trigger: section,
-        start: 'top 80%',
-        end: 'bottom 20%',
+        start: 'top 90%',
+        end: 'bottom 10%',
         toggleActions: 'play none none reverse'
       },
       opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: 'power2.out'
+      y: 100,
+      duration: 1.5,
+      ease: 'power4.out'
+    });
+  });
+
+  // Card hover effects
+  gsap.utils.toArray('.project-card, .experience-card').forEach(card => {
+    gsap.to(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      scale: 1,
+      opacity: 1,
+      duration: 0.8,
+      ease: 'back.out(1.7)'
+    });
+
+    // Hover effect
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, {
+        scale: 1.05,
+        boxShadow: '0 25px 40px rgba(0,0,0,0.3)',
+        duration: 0.3
+      });
+      if(card.querySelector('img')) {
+        gsap.to(card.querySelector('img'), {
+          scale: 1.1,
+          rotate: 2,
+          duration: 0.5
+        });
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        scale: 1,
+        boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+        duration: 0.3
+      });
+      if(card.querySelector('img')) {
+        gsap.to(card.querySelector('img'), {
+          scale: 1,
+          rotate: 0,
+          duration: 0.5
+        });
+      }
     });
   });
 }
-
 // ---------------------------
 // SMOOTH SCROLL FOR ANCHOR LINKS
 // ---------------------------
