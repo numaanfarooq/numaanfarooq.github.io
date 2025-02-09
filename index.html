@@ -4,18 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NUMAAN FAROOQ - Data Scientist</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
   
+  <!-- Three.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Tailwind CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans">
+<body class="bg-gray-900 text-gray-100 font-sans relative overflow-hidden">
+  <!-- Three.js Background Canvas (for 3D animations) -->
+  <canvas id="bg-canvas" class="absolute top-0 left-0 w-full h-full" style="z-index: -1;"></canvas>
+  
   <!-- Hero Section -->
-  <header class="h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-br from-blue-900 to-gray-900">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">NUMAAN FAROOQ</h1>
-    <p class="text-xl md:text-2xl mb-6">Data Scientist | Machine Learning Engineer</p>
-    <div class="flex gap-4 mb-8">
+  <header class="h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-br from-blue-900 to-gray-900 relative">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">NUMAAN FAROOQ</h1>
+    <p class="text-xl md:text-2xl mb-6 animate-fadeInUp">Data Scientist | Machine Learning Engineer</p>
+    <div class="flex gap-4 mb-8 animate-fadeIn">
       <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:text-blue-400">
         <i class="fab fa-linkedin text-3xl"></i>
       </a>
@@ -23,11 +30,11 @@
         <i class="fab fa-github text-3xl"></i>
       </a>
     </div>
-    <p class="text-lg">(+91) 7006431667 | numaanfarooqds@gmail.com</p>
+    <p class="text-lg animate-fadeInUp">(+91) 7006431667 | numaanfarooqds@gmail.com</p>
   </header>
 
   <!-- About Section -->
-  <section class="py-20 px-6 max-w-4xl mx-auto">
+  <section class="py-20 px-6 max-w-4xl mx-auto animate-fadeIn">
     <h2 class="text-4xl font-bold mb-8">Summary</h2>
     <p class="text-lg leading-relaxed">
       Highly skilled Data Scientist with a focus on bioinformatics, machine learning, and predictive modeling.
@@ -37,12 +44,12 @@
   </section>
 
   <!-- Experience Section -->
-  <section class="py-20 px-6 bg-gray-800">
+  <section class="py-20 px-6 bg-gray-800 animate-fadeIn">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold mb-12">Experience</h2>
       <div class="space-y-8">
         <!-- Machine Learning Intern - Unified Mentor -->
-        <div class="experience-card p-6 bg-gray-700 rounded-lg">
+        <div class="experience-card p-6 bg-gray-700 rounded-lg transform hover:scale-105 transition duration-300">
           <h3 class="text-2xl font-bold">Machine Learning Intern</h3>
           <p class="text-gray-400 mb-4">Unified Mentor | January 2025 – February 2025</p>
           <ul class="list-disc list-inside space-y-2">
@@ -54,7 +61,7 @@
         </div>
 
         <!-- Bioinformatics Intern - Dept. of Fisheries, SKAUST -->
-        <div class="experience-card p-6 bg-gray-700 rounded-lg">
+        <div class="experience-card p-6 bg-gray-700 rounded-lg transform hover:scale-105 transition duration-300">
           <h3 class="text-2xl font-bold">Bioinformatics Intern</h3>
           <p class="text-gray-400 mb-4">Dept. of Fisheries, SKAUST | February 2025 – March 2025</p>
           <ul class="list-disc list-inside space-y-2">
@@ -66,7 +73,7 @@
         </div>
 
         <!-- Managed Network Expert (Data Analysis) - Chegg -->
-        <div class="experience-card p-6 bg-gray-700 rounded-lg">
+        <div class="experience-card p-6 bg-gray-700 rounded-lg transform hover:scale-105 transition duration-300">
           <h3 class="text-2xl font-bold">Managed Network Expert (Data Analysis)</h3>
           <p class="text-gray-400 mb-4">Chegg | December 2024 – Present</p>
           <ul class="list-disc list-inside space-y-2">
@@ -77,7 +84,7 @@
         </div>
 
         <!-- Machine Learning Intern - Cognifyz Technologies -->
-        <div class="experience-card p-6 bg-gray-700 rounded-lg">
+        <div class="experience-card p-6 bg-gray-700 rounded-lg transform hover:scale-105 transition duration-300">
           <h3 class="text-2xl font-bold">Machine Learning Intern</h3>
           <p class="text-gray-400 mb-4">Cognifyz Technologies | November 2024 – December 2024</p>
           <ul class="list-disc list-inside space-y-2">
@@ -90,7 +97,7 @@
         </div>
 
         <!-- Data Science Intern - Cognifyz Technologies -->
-        <div class="experience-card p-6 bg-gray-700 rounded-lg">
+        <div class="experience-card p-6 bg-gray-700 rounded-lg transform hover:scale-105 transition duration-300">
           <h3 class="text-2xl font-bold">Data Science Intern</h3>
           <p class="text-gray-400 mb-4">Cognifyz Technologies | September 2024 – October 2024</p>
           <ul class="list-disc list-inside space-y-2">
@@ -105,55 +112,65 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="py-20 px-6">
+  <section class="py-20 px-6 animate-fadeIn">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold mb-12">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Plant Disease Prediction using DL -->
-        <div class="project-card p-6 bg-gray-800 rounded-lg">
-          <img src="https://via.placeholder.com/400x200?text=Plant+Disease+Prediction" alt="Plant Disease Prediction using DL" class="rounded mb-4" />
+        <div class="project-card p-6 bg-gray-800 rounded-lg transform hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/400x200?text=Plant+Disease+Prediction" alt="Plant Disease Prediction using DL" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Plant Disease Prediction using DL</h3>
-          <p class="text-gray-400 mb-4">A deep learning model that detects and classifies plant diseases from images with high accuracy.</p>
+          <p class="text-gray-400 mb-4">
+            A deep learning model that detects and classifies plant diseases from images with high accuracy.
+          </p>
           <a href="https://github.com/numaanfarooq/plant-disease-dl" target="_blank" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
             <i class="fab fa-github mr-2"></i>View Code
           </a>
         </div>
 
         <!-- Retinal Vessel Segmentation -->
-        <div class="project-card p-6 bg-gray-800 rounded-lg">
-          <img src="https://via.placeholder.com/400x200?text=Retinal+Vessel+Segmentation" alt="Retinal Vessel Segmentation" class="rounded mb-4" />
+        <div class="project-card p-6 bg-gray-800 rounded-lg transform hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/400x200?text=Retinal+Vessel+Segmentation" alt="Retinal Vessel Segmentation" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Retinal Vessel Segmentation</h3>
-          <p class="text-gray-400 mb-4">Segmenting retinal blood vessels using an optimized U-Net model to achieve 94% accuracy.</p>
+          <p class="text-gray-400 mb-4">
+            Segmenting retinal blood vessels using an optimized U-Net model to achieve 94% accuracy.
+          </p>
           <a href="https://github.com/numaanfarooq/retinal-vessel-segmentation" target="_blank" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
             <i class="fab fa-github mr-2"></i>View Code
           </a>
         </div>
 
         <!-- Brain Tumor Segmentation -->
-        <div class="project-card p-6 bg-gray-800 rounded-lg">
-          <img src="https://via.placeholder.com/400x200?text=Brain+Tumor+Segmentation" alt="Brain Tumor Segmentation" class="rounded mb-4" />
+        <div class="project-card p-6 bg-gray-800 rounded-lg transform hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/400x200?text=Brain+Tumor+Segmentation" alt="Brain Tumor Segmentation" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Brain Tumor Segmentation</h3>
-          <p class="text-gray-400 mb-4">A U-Net based model for precise segmentation of brain tumors in medical images, achieving 93% accuracy.</p>
+          <p class="text-gray-400 mb-4">
+            A U-Net based model for precise segmentation of brain tumors in medical images, achieving 93% accuracy.
+          </p>
           <a href="https://github.com/numaanfarooq/brain-tumor-segmentation" target="_blank" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
             <i class="fab fa-github mr-2"></i>View Code
           </a>
         </div>
 
         <!-- Fake News Classification and Prediction using NLP -->
-        <div class="project-card p-6 bg-gray-800 rounded-lg">
-          <img src="https://via.placeholder.com/400x200?text=Fake+News+Classification" alt="Fake News Classification using NLP" class="rounded mb-4" />
+        <div class="project-card p-6 bg-gray-800 rounded-lg transform hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/400x200?text=Fake+News+Classification" alt="Fake News Classification using NLP" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Fake News Classification &amp; Prediction using NLP</h3>
-          <p class="text-gray-400 mb-4">An NLP-based system designed to classify and predict fake news with robust accuracy.</p>
+          <p class="text-gray-400 mb-4">
+            An NLP-based system designed to classify and predict fake news with robust accuracy.
+          </p>
           <a href="https://github.com/numaanfarooq/fake-news-classification" target="_blank" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
             <i class="fab fa-github mr-2"></i>View Code
           </a>
         </div>
 
         <!-- Cervical Cancer Prediction -->
-        <div class="project-card p-6 bg-gray-800 rounded-lg">
-          <img src="https://via.placeholder.com/400x200?text=Cervical+Cancer+Prediction" alt="Cervical Cancer Prediction" class="rounded mb-4" />
+        <div class="project-card p-6 bg-gray-800 rounded-lg transform hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/400x200?text=Cervical+Cancer+Prediction" alt="Cervical Cancer Prediction" class="rounded mb-4">
           <h3 class="text-2xl font-bold mb-2">Cervical Cancer Prediction</h3>
-          <p class="text-gray-400 mb-4">Utilizing machine learning techniques to predict cervical cancer risk from clinical data.</p>
+          <p class="text-gray-400 mb-4">
+            Utilizing machine learning techniques to predict cervical cancer risk from clinical data.
+          </p>
           <a href="https://github.com/numaanfarooq/cervical-cancer-prediction" target="_blank" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
             <i class="fab fa-github mr-2"></i>View Code
           </a>
@@ -163,28 +180,28 @@
   </section>
 
   <!-- Skills Section -->
-  <section class="py-20 px-6 bg-gray-800">
+  <section class="py-20 px-6 bg-gray-800 animate-fadeIn">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold mb-12">Technical Skills</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="skill-card p-4 bg-gray-700 rounded-lg">
+        <div class="skill-card p-4 bg-gray-700 rounded-lg transform hover:scale-105 transition duration-300">
           <h3 class="text-xl font-bold mb-2"><i class="fab fa-python mr-2"></i>Programming</h3>
           <p>Python, R, SQL</p>
         </div>
-        <div class="skill-card p-4 bg-gray-700 rounded-lg">
+        <div class="skill-card p-4 bg-gray-700 rounded-lg transform hover:scale-105 transition duration-300">
           <h3 class="text-xl font-bold mb-2"><i class="fas fa-brain mr-2"></i>ML Frameworks</h3>
           <p>TensorFlow, PyTorch, Keras</p>
         </div>
-        <!-- Add other skills similarly -->
+        <!-- Add other skills as needed -->
       </div>
     </div>
   </section>
 
   <!-- Education Section -->
-  <section class="py-20 px-6">
+  <section class="py-20 px-6 animate-fadeIn">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold mb-8">Education</h2>
-      <div class="bg-gray-800 p-6 rounded-lg">
+      <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-105 transition duration-300">
         <h3 class="text-2xl font-bold">Bachelors (Hons) in Biotechnology</h3>
         <p class="text-gray-400">University of Kashmir | 2022-2026</p>
         <p class="mt-2">CGPA: 7.5</p>
@@ -193,7 +210,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="py-20 px-6 bg-gray-800">
+  <section class="py-20 px-6 bg-gray-800 animate-fadeIn">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold mb-12">Contact</h2>
       <div class="grid md:grid-cols-2 gap-8">
@@ -206,8 +223,8 @@
           </p>
         </div>
         <form class="space-y-4">
-          <input type="text" placeholder="Name" class="w-full p-3 bg-gray-700 rounded" />
-          <input type="email" placeholder="Email" class="w-full p-3 bg-gray-700 rounded" />
+          <input type="text" placeholder="Name" class="w-full p-3 bg-gray-700 rounded">
+          <input type="email" placeholder="Email" class="w-full p-3 bg-gray-700 rounded">
           <textarea placeholder="Message" class="w-full p-3 bg-gray-700 rounded"></textarea>
           <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded w-full">
             Send Message
@@ -218,8 +235,11 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 text-center bg-gray-900">
+  <footer class="py-8 text-center bg-gray-900 animate-fadeIn">
     <p>&copy; 2024 NUMAAN FAROOQ. All rights reserved</p>
   </footer>
+  
+  <!-- Custom JavaScript -->
+  <script src="assets/js/scripts.js"></script>
 </body>
 </html>
