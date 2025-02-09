@@ -29,19 +29,25 @@
   <canvas id="bg-canvas" class="absolute top-0 left-0 w-full h-full" style="z-index: -1; pointer-events: none;"></canvas>
   
   <!-- Hero Section -->
-  <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-br from-blue-900 to-gray-900 relative">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">NUMAAN FAROOQ</h1>
-    <p class="text-xl md:text-2xl mb-6 animate-fadeInUp">Data Scientist | Machine Learning Engineer</p>
-    <div class="flex gap-4 mb-8 animate-fadeIn">
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:text-blue-400">
-        <i class="fab fa-linkedin text-3xl"></i>
-      </a>
-      <a href="https://github.com/numaanfarooq" target="_blank" class="hover:text-blue-400">
-        <i class="fab fa-github text-3xl"></i>
-      </a>
+<header class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-br from-blue-900 to-gray-900 relative overflow-hidden">
+  <!-- 3D Canvas -->
+  <canvas id="bg-canvas" class="absolute top-0 left-0 w-full h-full" style="z-index: 0;"></canvas>
+  
+  <!-- Content Container -->
+  <div class="z-10 relative">
+    <!-- Profile Picture -->
+    <div class="profile-container mx-auto mb-8 animate-float">
+      <img src="your-profile.jpg" alt="NUMAAN FAROOQ" 
+           class="w-48 h-48 rounded-full border-4 border-blue-500 shadow-xl 
+                  hover:rotate-3d transition-transform duration-500">
     </div>
-    <p class="text-lg animate-fadeInUp">(+91) 7006431667 | numaanfarooqds@gmail.com</p>
-  </header>
+    
+    <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">
+      <span class="text-gradient">NUMAAN FAROOQ</span>
+    </h1>
+    <!-- Rest of hero content -->
+  </div>
+</header>
 
   <!-- About Section -->
   <section class="py-20 px-6 max-w-4xl mx-auto animate-fadeIn">
